@@ -1,82 +1,100 @@
-# Lightweight React Template for KAVIA
+# Tic Tac Toe Game
 
-This project provides a minimal React template with a clean, modern UI and minimal dependencies.
+A modern, responsive implementation of the classic Tic Tac Toe game built with React. This web application offers both 2-player and AI opponent modes with a clean, minimalist interface.
+
+![Game Preview](./src/assets/game-preview.png)
 
 ## Features
 
-- **Lightweight**: No heavy UI frameworks - uses only vanilla CSS and React
-- **Modern UI**: Clean, responsive design with KAVIA brand styling
-- **Fast**: Minimal dependencies for quick loading times
-- **Simple**: Easy to understand and modify
+- 🎮 Two-player mode for local multiplayer
+- 🤖 AI opponent mode (coming soon)
+- 📱 Responsive design for both desktop and mobile
+- 🎯 Real-time game state display
+- 🔄 Quick restart functionality
+- 🎨 Modern, minimalist UI with smooth animations
 
 ## Getting Started
 
-In the project directory, you can run:
+### Prerequisites
 
-### `npm start`
+- Node.js (v14 or higher)
+- npm (v6 or higher)
 
-Runs the app in development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Installation
 
-### `npm test`
+1. Clone the repository
+2. Navigate to the project directory:
+   ```bash
+   cd tic-tac-toe-web-game/tic_tac_toe_frontend
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-Launches the test runner in interactive watch mode.
+### Running the Application
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-## Customization
-
-### Colors
-
-The main brand colors are defined as CSS variables in `src/App.css`:
-
-```css
-:root {
-  --kavia-orange: #E87A41;
-  --kavia-dark: #1A1A1A;
-  --text-color: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
-}
+Start the development server:
+```bash
+npm start
 ```
 
-### Components
+The application will open in your default browser at [http://localhost:3000](http://localhost:3000).
 
-This template uses pure HTML/CSS components instead of a UI framework. You can find component styles in `src/App.css`. 
+### Building for Production
 
-Common components include:
-- Buttons (`.btn`, `.btn-large`)
-- Container (`.container`)
-- Navigation (`.navbar`)
-- Typography (`.title`, `.subtitle`, `.description`)
+To create a production build:
+```bash
+npm run build
+```
 
-## Learn More
+The build files will be created in the `build` folder.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Game Rules
 
-### Code Splitting
+1. The game is played on a 3x3 grid
+2. Players take turns placing their marker (X or O)
+3. The first player to get 3 of their markers in a row (horizontally, vertically, or diagonally) wins
+4. If all squares are filled and no player has won, the game is a draw
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Project Structure
 
-### Analyzing the Bundle Size
+```
+tic_tac_toe_frontend/
+├── src/
+│   ├── components/
+│   │   └── Board.js         # Game board component
+│   ├── utils/
+│   │   └── gameLogic.js     # Game logic utilities
+│   ├── App.js              # Main application component
+│   ├── App.css             # Application styles
+│   └── index.js            # Application entry point
+├── public/
+└── package.json
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Styling
 
-### Making a Progressive Web App
+The application uses a modern color scheme:
+- Primary: `#1976d2` (Blue)
+- Secondary: `#90caf9` (Light Blue)
+- Accent: `#ff7043` (Orange)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Custom CSS variables are used throughout the application for consistent theming.
 
-### Advanced Configuration
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-### Deployment
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-### `npm run build` fails to minify
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- React.js team for the amazing framework
+- The open-source community for inspiration and resources
