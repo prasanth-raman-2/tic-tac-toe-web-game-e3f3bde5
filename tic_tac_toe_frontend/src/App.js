@@ -1,29 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import Board from './components/Board';
-import { calculateWinner, getAIMove } from './utils/gameLogic';
+import { calculateWinner } from './utils/gameLogic';
 import './App.css';
 
 function App() {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [isXNext, setIsXNext] = useState(true);
-  const [isAIMode, setIsAIMode] = useState(false);
   const [winner, setWinner] = useState(null);
 
   useEffect(() => {
     const gameWinner = calculateWinner(squares);
     if (gameWinner) {
       setWinner(gameWinner);
-    } else if (isAIMode && !isXNext && !gameWinner) {
-      // AI's turn
-      const timer = setTimeout(() => {
-        const aiMove = getAIMove(squares);
-        if (aiMove !== null) {
-          handleSquareClick(aiMove);
-        }
-      }, 500); // Add delay for better UX
-      return () => clearTimeout(timer);
     }
-  }, [squares, isXNext, isAIMode]);
+  }, [squares]);
 
   const handleSquareClick = (i) => {
     if (squares[i] || winner) return;
@@ -40,11 +30,6 @@ function App() {
     setWinner(null);
   };
 
-  const toggleGameMode = () => {
-    setIsAIMode(!isAIMode);
-    handleRestart();
-  };
-
   const status = winner
     ? winner === 'Draw' 
       ? "🤝 It's a Draw! 🤝"
@@ -58,18 +43,11 @@ function App() {
         
         <div className="game-status">
           <p>{status}</p>
-          {isAIMode && !isXNext && !winner && <p>🤖 AI is thinking...</p>}
         </div>
 
         <Board squares={squares} onClick={handleSquareClick} />
 
         <div className="game-controls">
-          <button 
-            className="control-button mode-toggle"
-            onClick={toggleGameMode}
-          >
-            {isAIMode ? 'Switch to 2 Player' : 'Play vs AI'}
-          </button>
           <button 
             className="control-button restart"
             onClick={handleRestart}

@@ -13,16 +13,3 @@ export const calculateWinner = (squares) => {
   }
   return squares.every(square => square) ? 'Draw' : null;
 };
-
-export const getAIMove = (squares) => {
-  // Simple AI: Look for first empty square
-  const emptySquares = squares
-    .map((square, index) => square ? null : index)
-    .filter(index => index !== null);
-  
-  if (emptySquares.length === 0) return null;
-  
-  // Pick random empty square for more interesting gameplay
-  const randomIndex = Math.floor(Math.random() * emptySquares.length);
-  return emptySquares[randomIndex];
-};
