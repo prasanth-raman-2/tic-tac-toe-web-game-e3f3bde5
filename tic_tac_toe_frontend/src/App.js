@@ -47,9 +47,9 @@ function App() {
 
   const status = winner
     ? winner === 'Draw' 
-      ? "It's a Draw!"
-      : `Winner: ${winner}`
-    : `Current Player: ${isXNext ? 'X' : 'O'}`;
+      ? "🤝 It's a Draw! 🤝"
+      : `🎉 Winner: ${winner} 🎉`
+    : `Player ${isXNext ? 'X' : 'O'}'s Turn`;
 
   return (
     <div className="App">
@@ -58,7 +58,7 @@ function App() {
         
         <div className="game-status">
           <p>{status}</p>
-          {isAIMode && !isXNext && !winner && <p>AI is thinking...</p>}
+          {isAIMode && !isXNext && !winner && <p>🤖 AI is thinking...</p>}
         </div>
 
         <Board squares={squares} onClick={handleSquareClick} />
