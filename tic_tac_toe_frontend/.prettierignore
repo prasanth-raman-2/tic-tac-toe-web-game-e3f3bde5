@@ -1,0 +1,37 @@
+# Dependencies
+node_modules
+package-lock.json
+yarn.lock
+
+# Build outputs
+build
+dist
+coverage
+
+# Version control
+.git
+.gitignore
+
+# Environment files
+.env
+.env.*
+
+# IDE files
+.idea
+.vscode
+
+# Assets
+*.png
+*.jpg
+*.gif
+*.svg
+*.ico
+
+# Generated files
+*.min.js
+*.min.css
+
+# Documentation
+README.md
+LICENSE
+*.md
